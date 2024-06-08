@@ -1,0 +1,161 @@
+{
+  "version": 1.0,
+  "startingPose": {
+    "position": {
+      "x": 0.72,
+      "y": 4.4
+    },
+    "rotation": 120.0
+  },
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "named",
+          "data": {
+            "name": "au_shoot"
+          }
+        },
+        {
+          "type": "wait",
+          "data": {
+            "waitTime": 0.15
+          }
+        },
+        {
+          "type": "parallel",
+          "data": {
+            "commands": [
+              {
+                "type": "path",
+                "data": {
+                  "pathName": "Copy of Load to CL2"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "au_shootstop"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "au_intake"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "wait",
+          "data": {
+            "waitTime": 0.15
+          }
+        },
+        {
+          "type": "parallel",
+          "data": {
+            "commands": [
+              {
+                "type": "path",
+                "data": {
+                  "pathName": "Copy of CL2 to Load"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "au_intakestop"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "au_shoot"
+          }
+        },
+        {
+          "type": "wait",
+          "data": {
+            "waitTime": 0.1
+          }
+        },
+        {
+          "type": "parallel",
+          "data": {
+            "commands": [
+              {
+                "type": "path",
+                "data": {
+                  "pathName": "Copy of Copy of Copy of Load to CL2"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "au_shootstop"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "au_intake"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "wait",
+          "data": {
+            "waitTime": 0.15
+          }
+        },
+        {
+          "type": "parallel",
+          "data": {
+            "commands": [
+              {
+                "type": "path",
+                "data": {
+                  "pathName": "Copy of Copy of Copy of CL2 to Load"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "au_intakestop"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "au_shoot"
+          }
+        },
+        {
+          "type": "wait",
+          "data": {
+            "waitTime": 0.1
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "au_shootstop"
+          }
+        }
+      ]
+    }
+  },
+  "folder": "3-Piece",
+  "choreoAuto": false
+}
