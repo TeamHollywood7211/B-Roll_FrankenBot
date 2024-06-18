@@ -21,6 +21,7 @@ import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 import edu.wpi.first.wpilibj2.command.sysid.SysIdRoutine.Direction;
+import frc.robot.Constants.GlobalConstants;
 import frc.robot.commands.IntakeShooterCommand;
 import frc.robot.generated.TunerConstants;
 import frc.robot.subsystems.ArmSubsystem;
@@ -91,10 +92,10 @@ public class RobotContainer {
         // #region standard drivetrain
         // Drivetrain will execute this command periodically\
         
-        drivetrain.applyRequest(() -> drive.withVelocityX(-m_driver.getLeftY() * 4) // Drive forward with
+        drivetrain.applyRequest(() -> drive.withVelocityX(-m_driver.getLeftY() * GlobalConstants.joystickOverride) // Drive forward with
                                                                                            // negative Y (forward)
             
-            .withVelocityY(-m_driver.getLeftX() * 4) // Drive left with negative X (left)
+            .withVelocityY(-m_driver.getLeftX() * GlobalConstants.joystickOverride) // Drive left with negative X (left)
             .withRotationalRate(-m_driver.getRightX() * MaxAngularRate) // Drive counterclockwise with negative X (left)
         ).ignoringDisable(true));
 

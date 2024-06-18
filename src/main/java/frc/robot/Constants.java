@@ -35,6 +35,7 @@ public final class Constants {
     public static class GlobalConstants
     {
       public static final int currentLimit = 40;
+      public static final double joystickOverride = 4;
     }
 
 //41 42 are intake
