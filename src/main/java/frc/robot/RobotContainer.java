@@ -41,7 +41,7 @@ public class RobotContainer {
 
 
   private final CommandXboxController m_driver = new CommandXboxController(0); //Driver joystick
-  private final CommandXboxController m_operator = new CommandXboxController(1); //Operator joystick
+  //private final CommandXboxController m_operator = new CommandXboxController(1); //Operator joystick
 
   private final IntakeSubsystem m_intake = new IntakeSubsystem();
   private final ShooterSubsystem m_shooter = new ShooterSubsystem();

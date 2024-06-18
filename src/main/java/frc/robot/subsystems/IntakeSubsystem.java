@@ -24,11 +24,12 @@ public class IntakeSubsystem extends SubsystemBase {
   //DigitalInput intakeIR = new DigitalInput(IntakeConstants.IntakeIR1ID);
 
 
+
   public IntakeSubsystem() {
     IntakeMotor1.setSmartCurrentLimit(GlobalConstants.currentLimit); //SETTING THE CURRENT LIMITS
     IntakeMotor2.setSmartCurrentLimit(GlobalConstants.currentLimit);
-    AmpMotor.setSmartCurrentLimit(GlobalConstants.currentLimit);
-  }
+    AmpMotor.    setSmartCurrentLimit(GlobalConstants.currentLimit);
+  }                
 
   
 
