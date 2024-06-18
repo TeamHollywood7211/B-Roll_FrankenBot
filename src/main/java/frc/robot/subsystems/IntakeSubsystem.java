@@ -5,6 +5,7 @@
 package frc.robot.subsystems;
 
 import com.revrobotics.CANSparkFlex;
+import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkLowLevel.MotorType;
 
 import edu.wpi.first.wpilibj.DigitalInput;
@@ -18,6 +19,7 @@ public class IntakeSubsystem extends SubsystemBase {
 
   CANSparkFlex IntakeMotor1 = new CANSparkFlex(IntakeConstants.IntakeMotor1ID, MotorType.kBrushless);
   CANSparkFlex IntakeMotor2 = new CANSparkFlex(IntakeConstants.IntakeMotor2ID, MotorType.kBrushless);
+  CANSparkMax AmpMotor = new CANSparkMax(IntakeConstants.ampMotorID, MotorType.kBrushed);
 
   //DigitalInput intakeIR = new DigitalInput(IntakeConstants.IntakeIR1ID);
 
@@ -25,6 +27,7 @@ public class IntakeSubsystem extends SubsystemBase {
   public IntakeSubsystem() {
     IntakeMotor1.setSmartCurrentLimit(GlobalConstants.currentLimit); //SETTING THE CURRENT LIMITS
     IntakeMotor2.setSmartCurrentLimit(GlobalConstants.currentLimit);
+    AmpMotor.setSmartCurrentLimit(GlobalConstants.currentLimit);
   }
 
   
@@ -43,17 +46,20 @@ public class IntakeSubsystem extends SubsystemBase {
     speed = speed * IntakeConstants.speedReduction;
     IntakeMotor1.set(speed);
     IntakeMotor2.set(-speed);
+    AmpMotor.set(speed);
   }
   public void intakeStart()
   {
     double speed = 1 * IntakeConstants.speedReduction;
     IntakeMotor1.set(speed);
     IntakeMotor2.set(-speed);
+    AmpMotor.set(speed);
   }
    public void intakeStop()
   {
     IntakeMotor1.set(0);
     IntakeMotor2.set(0);
+    AmpMotor.set(0);
   }
 
 

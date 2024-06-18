@@ -14,6 +14,7 @@ public final class Constants {
       public static final int IntakeMotor2ID = 42;
       public static final double speedReduction = 0.6;
       public static final int IntakeIR1ID = 0;
+      public static final int ampMotorID = 43;
     } 
     public static class ShooterConstants
     {
@@ -23,7 +24,7 @@ public final class Constants {
     public static class FeederConstants
     {
       public static final int Motor1ID = 41;
-      public static final int Motor2ID = 42;
+      public static final int Motor2ID = 42; 
     }
     public static class ArmConstants
     {
@@ -34,8 +35,8 @@ public final class Constants {
     }
     public static class GlobalConstants
     {
-      public static final int currentLimit = 40;
-      public static final double joystickOverride = 4;
+      public static final int currentLimit = 40; //
+      public static final double joystickOverride = 4; // Overrides the joystick thingy 
     }
 
 //41 42 are intake

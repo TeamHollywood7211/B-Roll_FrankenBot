@@ -5,6 +5,7 @@
 package frc.robot.subsystems;
 
 import com.revrobotics.CANSparkFlex;
+import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkLowLevel.MotorType;
 
 import edu.wpi.first.wpilibj2.command.Command;
@@ -15,14 +16,17 @@ import frc.robot.Constants.ShooterConstants;
 public class ShooterSubsystem extends SubsystemBase {
 
   
+  //45 is a neo vortex
+  //New motor and make it the same as intake
+  
 
   CANSparkFlex motor1 = new CANSparkFlex(ShooterConstants.ShooterMotor1ID, MotorType.kBrushless);
-  CANSparkFlex motor2 = new CANSparkFlex(ShooterConstants.ShooterMotor2ID, MotorType.kBrushless);
+  CANSparkMax  motor2 = new CANSparkMax (ShooterConstants.ShooterMotor2ID, MotorType.kBrushless);
 
 
 
   public ShooterSubsystem() {
-    motor1.setSmartCurrentLimit(GlobalConstants.currentLimit);
+    //motor1.setSmartCurrentLimit(GlobalConstants.currentLimit);
     motor2.setSmartCurrentLimit(GlobalConstants.currentLimit);
   }
 
@@ -62,7 +66,7 @@ public class ShooterSubsystem extends SubsystemBase {
   }
   public void setMotor(double speed)
   {
-    speed = speed*2; //Ryans epic idea
+    //speed = speed; //Ryans epic idea
     motor1.set(speed);
     motor2.set(-speed);
   }

@@ -86,7 +86,7 @@ public class RobotContainer {
     autoAim.HeadingController = autoTurnPID;
     autoAim.HeadingController.enableContinuousInput(-180, 180);
 
-    System.out.println(m_driver.getLeftY());
+    //System.out.println(m_driver.getLeftY());
 
     drivetrain.setDefaultCommand(
         // #region standard drivetrain
