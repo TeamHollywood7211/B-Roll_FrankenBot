@@ -18,15 +18,15 @@
           }
         },
         {
-          "type": "wait",
+          "type": "named",
           "data": {
-            "waitTime": 0.5
+            "name": "au_intake"
           }
         },
         {
-          "type": "named",
+          "type": "wait",
           "data": {
-            "name": "au_shootstop"
+            "waitTime": 0.5
           }
         },
         {
@@ -42,7 +42,7 @@
               {
                 "type": "named",
                 "data": {
-                  "name": "au_intake"
+                  "name": "au_shootstop"
                 }
               }
             ]
@@ -138,6 +138,6 @@
       ]
     }
   },
-  "folder": "3-Piece",
+  "folder": null,
   "choreoAuto": false
 }

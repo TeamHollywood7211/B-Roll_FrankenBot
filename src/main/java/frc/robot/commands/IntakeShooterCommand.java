@@ -4,7 +4,7 @@
 
 package frc.robot.commands;
 
-import frc.robot.subsystems.ExampleSubsystem;
+
 import frc.robot.subsystems.IntakeSubsystem;
 import frc.robot.subsystems.ShooterSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -38,37 +38,25 @@ public class IntakeShooterCommand extends Command {
   @Override
   public void execute() {
     //System.out.println(boolToInt(m_controller.leftBumper().getAsBoolean()) - boolToInt(m_controller.leftTrigger().getAsBoolean()));
+    /*\
+    |*| -Gets the difference between the bumper and the trigger 
+    |*|     /\  /\
+    |*|    /  \/  \
+    |*|   <  o  o  >
+    |*|    \  w   /
+    |*|     ######
+    \*/
+    
     m_shooter.setMotor(boolToInt(m_controller.leftBumper().getAsBoolean()) - boolToInt(m_controller.leftTrigger().getAsBoolean()));
     m_intake.setMotor(boolToInt(m_controller.rightBumper().getAsBoolean()) - boolToInt(m_controller.rightTrigger().getAsBoolean()));
     
-    //m_intake.setMotor(boolToInt(m_controller.rightBumper().getAsBoolean()) - boolToInt(m_controller.rightTrigger().getAsBoolean()));
-    /* ks
-    if(m_controller.leftBumper().getAsBoolean())
-    {
-      m_shooter.setMotor(1);
-    }
-    if((!m_controller.leftBumper().getAsBoolean()))
-    {
-      m_shooter.setMotor(0);
-    }
     
 
-    if(m_controller.rightBumper().getAsBoolean())
-    {
-      m_intake.setMotor(1);
-    }
-    if(m_controller.rightTrigger().getAsBoolean())
-    {
-      m_intake.setMotor(-1);
-    }
-    if((!m_controller.rightBumper().getAsBoolean()) && (!m_controller.rightTrigger().getAsBoolean()))
-    {
-      m_intake.setMotor(0);
-    }*/
+
 
   }
 
-  public int boolToInt(boolean b)
+  public int boolToInt(boolean b) //theres probably a way to do this in Java but theres just some dumb moments where some values wont take bools as ints
   {
     if(b == false)
     {

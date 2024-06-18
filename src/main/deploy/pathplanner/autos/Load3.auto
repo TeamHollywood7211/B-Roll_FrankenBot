@@ -18,6 +18,12 @@
           }
         },
         {
+          "type": "named",
+          "data": {
+            "name": "au_intake"
+          }
+        },
+        {
           "type": "wait",
           "data": {
             "waitTime": 0.15
@@ -156,6 +162,6 @@
       ]
     }
   },
-  "folder": "3-Piece",
+  "folder": null,
   "choreoAuto": false
 }

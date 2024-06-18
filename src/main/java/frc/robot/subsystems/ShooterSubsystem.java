@@ -5,13 +5,11 @@
 package frc.robot.subsystems;
 
 import com.revrobotics.CANSparkFlex;
-import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkLowLevel.MotorType;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-
-import frc.robot.Constants.IntakeConstants;
+import frc.robot.Constants.GlobalConstants;
 import frc.robot.Constants.ShooterConstants;
 
 public class ShooterSubsystem extends SubsystemBase {
@@ -24,8 +22,8 @@ public class ShooterSubsystem extends SubsystemBase {
 
 
   public ShooterSubsystem() {
-    motor1.setSmartCurrentLimit(40);
-    motor2.setSmartCurrentLimit(40);
+    motor1.setSmartCurrentLimit(GlobalConstants.currentLimit);
+    motor2.setSmartCurrentLimit(GlobalConstants.currentLimit);
   }
 
   
@@ -64,10 +62,22 @@ public class ShooterSubsystem extends SubsystemBase {
   }
   public void setMotor(double speed)
   {
+    speed = speed*2; //Ryans epic idea
     motor1.set(speed);
     motor2.set(-speed);
   }
 
+  public void shooterStart()
+  {
+    motor1.set(1);
+    motor2.set(-1);
+  }
+
+  public void shooterStop()
+  {
+    motor1.set(0);
+    motor2.set(0);
+  }
 
 
 
