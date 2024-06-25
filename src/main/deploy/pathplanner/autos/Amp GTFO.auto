@@ -1,0 +1,62 @@
+{
+  "version": 1.0,
+  "startingPose": {
+    "position": {
+      "x": 0.72,
+      "y": 6.67
+    },
+    "rotation": -117.44961565490276
+  },
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "named",
+          "data": {
+            "name": "au_shoot"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "au_intake"
+          }
+        },
+        {
+          "type": "wait",
+          "data": {
+            "waitTime": 1.0
+          }
+        },
+        {
+          "type": "parallel",
+          "data": {
+            "commands": [
+              {
+                "type": "path",
+                "data": {
+                  "pathName": "Amp to GTFO"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "au_shootstop"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "au_intakestop"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "folder": null,
+  "choreoAuto": false
+}

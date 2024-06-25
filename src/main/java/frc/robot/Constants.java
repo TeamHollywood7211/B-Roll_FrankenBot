@@ -10,8 +10,8 @@ public final class Constants {
 
     public static class IntakeConstants
     {
-      public static final int IntakeMotor1ID = 41; 
-      public static final int IntakeMotor2ID = 42; 
+      public static final int IntakeMotor1ID = 41;
+      public static final int IntakeMotor2ID = 42;
       public static final int ampMotorID = 43;
 
       public static final int IntakeIR1ID = 0; //IR that is possibly going to be unused
@@ -25,10 +25,10 @@ public final class Constants {
     }
     public static class ArmConstants
     {
-      public static final int ArmMotor = 60;
-      public static final double kP = 0.072; //PID for arm (possibly tune this better later)
-      public static final double kI = 0; //I dont touch this value
-      public static final double kD = 0.0137;
+      public static final int ArmMotor = 60 ;
+      public static final double kP = 0.072 ; //PID for arm (possibly tune this better later)
+      public static final double kI = 0; //     I dont touch this value. Like seriously, do NOT touch this value. This is a SCARY number and DO NOT TOUCH IT!!!
+      public static final double kD = 0.003; //Increase this until jittery!!! 0.0137;
     }
     public static class GlobalConstants
     {
@@ -36,8 +36,8 @@ public final class Constants {
       public static final double joystickOverride = 4; // Overrides the joystick thingy 
     }
 
-//41 42 are intake
-//46 is feeder??
+//41 42 43 are intake
+//45 and 46 are shooter
 
 
 

@@ -28,7 +28,14 @@ import frc.robot.subsystems.ArmSubsystem;
 import frc.robot.subsystems.IntakeSubsystem;
 import frc.robot.subsystems.ShooterSubsystem;
 
-
+/*
+ *  ==AUTON NAMES==
+ *  Load 3 = Far 1 Center 1
+ *  CL.load_3-Piece = Far 2 Center 1
+ *  Close 2 = Center 1
+ *  Close 3 = Center 2
+ * 
+ */
 
 public class RobotContainer {
   private static final double MaxSpeed = 1;
