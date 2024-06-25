@@ -5,6 +5,7 @@
 package frc.robot.commands;
 
 
+import frc.robot.RobotContainer;
 import frc.robot.subsystems.IntakeSubsystem;
 import frc.robot.subsystems.ShooterSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -40,17 +41,26 @@ public class IntakeShooterCommand extends Command {
     //System.out.println(boolToInt(m_controller.leftBumper().getAsBoolean()) - boolToInt(m_controller.leftTrigger().getAsBoolean()));
     /*\
     |*| -Gets the difference between the bumper and the trigger 
-    |*|     /\  /\
-    |*|    /  \/  \
-    |*|   <  o  o  >
-    |*|    \  w   /
-    |*|     ######
+    |*|     /\   /\
+    |*|    /  \_/  \
+    |*|   <  o   o  >
+    |*|    \   w   /
+    |*|     #######
     \*/
     
-    m_shooter.setMotor(boolToInt(m_controller.leftBumper().getAsBoolean()) - boolToInt(m_controller.leftTrigger().getAsBoolean()));
+    //m_shooter.setMotor(boolToInt(m_controller.leftBumper().getAsBoolean()) - boolToInt(m_controller.leftTrigger().getAsBoolean()));
+    m_shooter.setMotor(boolToInt(!m_controller.leftTrigger().getAsBoolean()));
+    
     m_intake.setMotor(boolToInt(m_controller.rightBumper().getAsBoolean()) - boolToInt(m_controller.rightTrigger().getAsBoolean()));
     
-    
+    if(m_controller.leftBumper().getAsBoolean())
+    {
+      RobotContainer.RunningSpeed = 0.5;
+    }
+    else
+    {
+      RobotContainer.RunningSpeed = 1;
+    }
 
 
 

@@ -38,7 +38,8 @@ import frc.robot.subsystems.ShooterSubsystem;
  */
 
 public class RobotContainer {
-  private static final double MaxSpeed = 1;
+  private static double MaxSpeed = 1;
+  public static double RunningSpeed = 1;
   private double MaxAngularRate = 1.5 * Math.PI; // 3/4 of a rotation per second max angular velocity
   static Rotation2d cachedAngle = Rotation2d.fromDegrees(0);
   public static double shooterSpeed = 0.65;
@@ -88,22 +89,27 @@ public class RobotContainer {
 
   // private final Telemetry logger = new Telemetry(MaxSpeed);
 
+
+  
   private void configureBindings() {
 
     autoAim.HeadingController = autoTurnPID;
     autoAim.HeadingController.enableContinuousInput(-180, 180);
+
+
 
     //System.out.println(m_driver.getLeftY());
 
     drivetrain.setDefaultCommand(
         // #region standard drivetrain
         // Drivetrain will execute this command periodically\
-        
-        drivetrain.applyRequest(() -> drive.withVelocityX(-m_driver.getLeftY() * GlobalConstants.joystickOverride) // Drive forward with
+
+
+        drivetrain.applyRequest(() -> drive.withVelocityX(-m_driver.getLeftY() * GlobalConstants.joystickOverride * RunningSpeed) // Drive forward with
                                                                                            // negative Y (forward)
             
-            .withVelocityY(-m_driver.getLeftX() * GlobalConstants.joystickOverride) // Drive left with negative X (left)
-            .withRotationalRate(-m_driver.getRightX() * MaxAngularRate) // Drive counterclockwise with negative X (left)
+            .withVelocityY(-m_driver.getLeftX() * GlobalConstants.joystickOverride * RunningSpeed) // Drive left with negative X (left)
+            .withRotationalRate(-m_driver.getRightX() * MaxAngularRate * RunningSpeed) // Drive counterclockwise with negative X (left)
         ).ignoringDisable(true));
 
     //m_driver.a().whileTrue(drivetrain.applyRequest(() -> brake));
@@ -169,6 +175,7 @@ public class RobotContainer {
     //createFrontUsbCamera();
     configureBindings();
     //RobotController.setBrownoutVoltage(5);
+
   }
 
   public Command getAutonomousCommand() {

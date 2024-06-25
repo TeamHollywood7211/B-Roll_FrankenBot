@@ -19,7 +19,7 @@ public class IntakeSubsystem extends SubsystemBase {
 
   CANSparkFlex IntakeMotor1 = new CANSparkFlex(IntakeConstants.IntakeMotor1ID, MotorType.kBrushless);
   CANSparkFlex IntakeMotor2 = new CANSparkFlex(IntakeConstants.IntakeMotor2ID, MotorType.kBrushless);
-  CANSparkMax AmpMotor = new CANSparkMax(IntakeConstants.ampMotorID, MotorType.kBrushed);
+  CANSparkMax AmpMotor = new   CANSparkMax  ( IntakeConstants . ampMotorID   ,   MotorType.kBrushed);
 
   //DigitalInput intakeIR = new DigitalInput(IntakeConstants.IntakeIR1ID);
 

@@ -19,7 +19,7 @@ public class ShooterSubsystem extends SubsystemBase {
   //45 is a neo vortex
   //New motor and make it the same as intake
   
-
+ 
   CANSparkFlex motor1 = new CANSparkFlex(ShooterConstants.ShooterMotor1ID, MotorType.kBrushless);
   CANSparkMax  motor2 = new CANSparkMax (ShooterConstants.ShooterMotor2ID, MotorType.kBrushless);
 
